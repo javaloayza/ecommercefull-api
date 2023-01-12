@@ -30,4 +30,5 @@ api/.env.test
 api/package-lock.json
 client/package-lock.json
 package-lock.json
+src\config\serviceAccount1.json
 tmp

@@ -7,7 +7,7 @@ const {
 } = process.env
 
 /* Creating a database url to connect to the database. */
-const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/ecommerce1`
+const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/ecommercefull`
 
 /* Creating a new instance of Sequelize and connecting to the database. */
 const sequelize = new Sequelize(DB_URL, {
