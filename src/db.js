@@ -7,7 +7,7 @@ const {
 } = process.env
 
 /* Creating a database url to connect to the database. */
-const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/remotedb_fcks`
+const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/remotedb_1`
 // ecommerce1`  **local database
 
 /* Creating a new instance of Sequelize and connecting to the database. */
