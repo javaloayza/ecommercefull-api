@@ -7,14 +7,22 @@ const {
 } = process.env
 
 /* Creating a database url to connect to the database. */
-const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/remotedb_1_3fqx`
+const DB_URL = process.env.DATABASE_URL || `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/postgres`
 // ecommerce1`  **local database
-// remotedb_1_3fqx  **remote database
+// remotedb_1_3fqx  **remote database render.com
+// postgres **remote database aws
 
 /* Creating a new instance of Sequelize and connecting to the database. */
 const sequelize = new Sequelize(DB_URL, {
   logging: false, // set to console.log to see the raw SQL queries
-  native: false // lets Sequelize know we can use pg-native for ~30% more speed
+  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false
+    }
+  }
 })
 
 const basename = path.basename(__filename)
